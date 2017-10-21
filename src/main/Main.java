@@ -22,7 +22,6 @@ public class Main {
 				{
 					System.out.println("Hello "+tmp+"!");
 				}
-				System.out.println(i);
 				++i;
 			}
 		}
@@ -30,18 +29,21 @@ public class Main {
 	
 	public static boolean isPrime(int number)
 	{	
-		for(int i=2;i<number;++i)
+		if(number<2)
 		{
-			if(number/i==0)
+			return false;
+		}
+		else
+		{
+			for(int i=2;i<number;++i)
 			{
-				return false;
-			}
-			else
-			{
-				return true;
+				if(number%i==0)
+				{
+					return false;
+				}
 			}
 		}
-		return false;
+		return true;
 	}
 
 }
